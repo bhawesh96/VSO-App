@@ -17,4 +17,14 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="TabStyle" parent="Widget.Design.TabLayout">
+        <item name="tabBackground">@android:color/transparent</item>
+        <item name="tabTextAppearance">@style/TabStyle.text</item>
+        <item name="tabSelectedTextColor">@android:color/white</item>
+    </style>
+
+    <style name="TabStyle.text" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
 </resources>
