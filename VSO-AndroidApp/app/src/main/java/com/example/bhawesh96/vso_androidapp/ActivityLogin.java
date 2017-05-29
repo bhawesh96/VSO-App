@@ -62,7 +62,7 @@ public class ActivityLogin extends AppCompatActivity {
 
         TypeWriter typeWriter = (TypeWriter) findViewById(R.id.tv_type);
         typeWriter.setCharacterDelay(80);
-        typeWriter.animateText("\"Let's touch the lives of others\"");
+        typeWriter.animateText("Let's touch the lives of others");
 
         typeWriter.animate().translationY(-500).setDuration(4000).setListener(new Animator.AnimatorListener() {
             @Override

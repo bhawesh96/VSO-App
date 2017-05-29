@@ -24,8 +24,9 @@
         android:gravity="center"
         android:text=""
         android:textColor="@android:color/white"
-        android:textSize="28sp"
-        android:textStyle="italic" />
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textAllCaps="true"/>
 
     <LinearLayout
         android:id="@+id/tabs_container"
