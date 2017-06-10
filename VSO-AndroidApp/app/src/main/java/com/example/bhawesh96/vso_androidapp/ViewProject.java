@@ -53,6 +53,9 @@ public class ViewProject extends AppCompatActivity {
 
         getData();
     }
+
+
+
     private void getData() {
         db.addValueEventListener(new ValueEventListener() {
             @Override
