@@ -29,6 +29,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class ActivityLogin extends AppCompatActivity {
 
+    FirebaseUser user;
     private FirebaseAuth mAuth;
     Button b;
 
@@ -89,10 +90,7 @@ public class ActivityLogin extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             //Log.d(TAG, "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            finish();
-                            startActivity(new Intent(ActivityLogin.this, AddProject.class));
-
+                            user = mAuth.getCurrentUser();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("LOGIN-ACTIVITY", "signInWithEmail:failure", task.getException());
@@ -103,9 +101,6 @@ public class ActivityLogin extends AppCompatActivity {
                         // ...
                     }
                 });
-        if(mAuth.getCurrentUser() != null) {
-
-        }
 
         TypeWriter typeWriter = (TypeWriter) findViewById(R.id.tv_type);
         typeWriter.setCharacterDelay(80);
@@ -118,6 +113,11 @@ public class ActivityLogin extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+
+                if(user != null) {
+                    finish();
+                    startActivity(new Intent(ActivityLogin.this, AddProject.class));
+                }
                 ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
                 ViewPagerAdapterLogin adapter = new ViewPagerAdapterLogin(getApplicationContext(), getSupportFragmentManager());
                 viewPager.setAdapter(adapter);

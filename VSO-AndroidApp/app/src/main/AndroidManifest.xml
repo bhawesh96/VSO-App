@@ -21,7 +21,8 @@
             android:label="@string/title_activity_home_screen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddProject" />
-        <activity android:name=".ViewProject"></activity>
+        <activity android:name=".ViewProject" />
+        <activity android:name=".FragmentSignUpNext"></activity>
     </application>
 
 </manifest>
