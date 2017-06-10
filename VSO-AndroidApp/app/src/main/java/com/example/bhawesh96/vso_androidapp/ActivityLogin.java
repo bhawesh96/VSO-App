@@ -12,8 +12,25 @@ import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.Transformation;
 import android.widget.LinearLayout;
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class ActivityLogin extends AppCompatActivity {
+
+    private FirebaseAuth mAuth;
+    Button b;
 
     public static Animation expand(final View view) {
         int matchParentMeasureSpec = View.MeasureSpec.makeMeasureSpec(((View) view.getParent()).getWidth(), View.MeasureSpec.EXACTLY);
@@ -59,6 +76,36 @@ public class ActivityLogin extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
+
+        b = (Button) findViewById(R.id.button);
+        String email = "bhansalibhawesh@yahoo.com";
+        String password = "Clandestine@1996";
+
+        mAuth = FirebaseAuth.getInstance();
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            //Log.d(TAG, "signInWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            finish();
+                            startActivity(new Intent(ActivityLogin.this, AddProject.class));
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("LOGIN-ACTIVITY", "signInWithEmail:failure", task.getException());
+                            Toast.makeText(ActivityLogin.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+
+                        // ...
+                    }
+                });
+        if(mAuth.getCurrentUser() != null) {
+
+        }
 
         TypeWriter typeWriter = (TypeWriter) findViewById(R.id.tv_type);
         typeWriter.setCharacterDelay(80);
