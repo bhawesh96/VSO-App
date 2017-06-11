@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="designation_options">
+        <item>@string/des_student</item>
+        <item>@string/des_faculty</item>
+        <item>@string/des_empl</item>
+        <item>@string/des_retired_empl</item>
+        <item>@string/des_spouse_empl</item>
+        <item>@string/des_public</item>
+        <item>@string/des_hint</item>
+    </string-array>
+</resources>

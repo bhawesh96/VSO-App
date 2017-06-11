@@ -1,9 +1,8 @@
-package com.example.bhawesh96.vso_androidapp;
+package com.example.bhawesh96.vso_androidapp.LoginSignUp;
 
 import android.content.Context;
 import android.os.Handler;
 import android.util.AttributeSet;
-import android.widget.TextView;
 
 public class TypeWriter extends android.support.v7.widget.AppCompatTextView {
     private CharSequence mText;
