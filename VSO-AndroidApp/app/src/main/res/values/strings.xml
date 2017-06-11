@@ -6,4 +6,28 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <!-- Login, Signup strings -->
+    <string name="forgot">Forgot Password?</string>
+    <string name="new_user_msg">New to VSO?\n<u>Signup now!</u></string>
+    <string name="login">LOGIN</string>
+    <string name="password">Password</string>
+    <string name="vso_id">VSO ID</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="mobile">Mobile number</string>
+    <string name="campus">Campus</string>
+    <string name="campus_manipal">Manipal</string>
+    <string name="campus_mangalore">Mangalore</string>
+    <string name="designation">Designation</string>
+    <string name="next">NEXT</string>
+        <!-- Designation Spinner strings -->
+        <string name="des_student">Student of MU</string>
+        <string name="des_faculty">Faculty of MU</string>
+        <string name="des_empl">Employee at MU</string>
+        <string name="des_spouse_empl">Spouse of MU Employee</string>
+        <string name="des_retired_empl">Retired MU Employee</string>
+        <string name="des_public">Public</string>
+        <string name="des_hint">Select Designation</string>
 </resources>

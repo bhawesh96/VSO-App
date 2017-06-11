@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@android:color/transparent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginTop="16dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,7 +22,7 @@
             <android.support.v7.widget.AppCompatEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="VSO_ID"
+                android:hint="@string/vso_id"
                 android:inputType="text"
                 android:maxLines="1"
                 android:textColor="@android:color/white"
@@ -32,6 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="16dp"
             android:src="@drawable/ic_person_24dp" />
     </RelativeLayout>
@@ -50,7 +53,7 @@
                 android:id="@+id/edit_pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:textColor="@android:color/white"
@@ -62,6 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
@@ -70,6 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
                 android:clickable="true"
                 android:src="@drawable/ic_show_24dp" />
 
@@ -88,9 +93,28 @@
         android:background="@drawable/ripple_login"
         android:elevation="4dp"
         android:fontFamily="sans-serif-medium"
-        android:text="LOGIN"
+        android:text="@string/login"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:translationZ="4dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:text="@string/forgot"
+        android:textColor="@color/colorAccent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
+        android:text="@string/new_user_msg"
+        android:textSize="16sp"
+        android:id="@+id/to_signup"/>
 
 </LinearLayout>
