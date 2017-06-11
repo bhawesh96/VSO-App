@@ -21,7 +21,7 @@ public class AddProject extends AppCompatActivity {
 
     EditText editText_title, editText_desc;
     ToggleButton toggleButton_type;
-    Button button_add, button_view;
+    Button button_add, button_view, button_picker;
     String type;
 
     DatabaseReference myRef;
@@ -36,6 +36,7 @@ public class AddProject extends AppCompatActivity {
         toggleButton_type = (ToggleButton) findViewById(R.id.toggleButton_type);
         button_add = (Button) findViewById(R.id.button_add);
         button_view = (Button) findViewById(R.id.button_view);
+        button_picker = (Button) findViewById(R.id.button_picker);
 
         toggleButton_type.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +50,13 @@ public class AddProject extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 addProject();
+            }
+        });
+
+        button_picker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AddProject.this, ImagePicker.class));
             }
         });
 
