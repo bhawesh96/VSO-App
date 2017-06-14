@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
 
         <!-- <activity android:name=".LoginSignUp.ActivityLogin"> -->
-        <activity android:name=".Post">
+        <activity android:name=".LoginSignUp.ActivityLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,9 +26,6 @@
             android:name=".ActivityHomeScreen"
             android:label="@string/title_activity_home_screen"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddProject" />
-        <activity android:name=".ViewProject" />
-        <activity android:name=".ImagePicker" />
         <activity
             android:name=".PostMan"
             android:label="@string/title_activity_post_man"

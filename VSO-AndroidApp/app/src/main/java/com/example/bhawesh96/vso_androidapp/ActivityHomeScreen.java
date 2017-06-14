@@ -109,17 +109,17 @@ public class ActivityHomeScreen extends AppCompatActivity
         Fragment current_fragment = null;
 
         if (id == R.id.nav_homeScreen) {
-            current_fragment = new FragmentHomeScreen();
+//            current_fragment = new FragmentHomeScreen();
         } else if (id == R.id.nav_about) {
-            current_fragment = new FragmentAbout();
+//            current_fragment = new FragmentAbout();
         } else if (id == R.id.nav_review) {
-            current_fragment = new FragmentReview();
+//            current_fragment = new FragmentReview();
         } else if (id == R.id.nav_faq) {
-            current_fragment = new FragmentFAQ();
+//            current_fragment = new FragmentFAQ();
         } else if (id == R.id.nav_logout) {
 //            Toast.makeText()
         } else if (id == R.id.nav_projects) {
-            current_fragment = new FragmentProjects();
+//            current_fragment = new FragmentProjects();
         }
 
 

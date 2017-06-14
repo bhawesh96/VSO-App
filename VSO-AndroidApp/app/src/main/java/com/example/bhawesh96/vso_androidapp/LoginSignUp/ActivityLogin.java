@@ -15,7 +15,7 @@ import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
-import com.example.bhawesh96.vso_androidapp.AddProject;
+import com.example.bhawesh96.vso_androidapp.ActivityHomeScreen;
 import com.example.bhawesh96.vso_androidapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -78,7 +78,7 @@ public class ActivityLogin extends AppCompatActivity
                 if (user != null)
                 {
                     finish();
-                    startActivity(new Intent(ActivityLogin.this, AddProject.class));
+                    startActivity(new Intent(ActivityLogin.this, ActivityHomeScreen.class));
                 }
                 final FrameLayout ll = (FrameLayout) findViewById(R.id.container_login);
                 expand(ll);
