@@ -1,13 +1,11 @@
 package com.example.bhawesh96.vso_androidapp;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
-import java.net.URI;
-import java.util.List;
-
-import org.apache.http.conn.ssl.AllowAllHostnameVerifier;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -18,13 +16,11 @@ import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
-/**
- * Created by bhawesh96 on 13/6/17.
- */
+import java.net.URI;
+import java.util.List;
 
-public class Post extends Activity {
-
-
+public class Post extends Activity
+{
     private static final String REGISTER_URL = "http://vso.manipal.edu/Login.aspx/";
     public static final String KEY_VIEWSTATE = "__VIEWSTATE";
     public static final String KEY_VIEWSTATEGENERATOR = "__VIEWSTATEGENERATOR";
@@ -45,12 +41,21 @@ public class Post extends Activity {
     TextView textView;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_post);
 
         textView = (TextView) findViewById(R.id.textView);
-        try2();
+        AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... params)
+            {
+                try2();
+                return null;
+            }
+        };
+        task.execute();
     }
 
     private static void try2()
@@ -63,16 +68,16 @@ public class Post extends Activity {
             CloseableHttpResponse response1 = httpclient.execute(httpget);
             HttpEntity entity = response1.getEntity();
 
-            System.out.println("Login form get: " + response1.getStatusLine());
-//            EntityUtils.consume(entity);
+            Log.e("post", "Login form get: " + response1.getStatusLine());
+            entity.getContent();
 
-            System.out.println("Initial set of cookies:");
+            Log.e("post", "Initial set of cookies:");
             List<Cookie> cookies = cookieStore.getCookies();
             if (cookies.isEmpty())
-                System.out.println("None");
+                Log.e("post", "None");
             else
                 for (int i = 0; i < cookies.size(); i++)
-                    System.out.println("- " + cookies.get(i).toString());
+                    Log.e("post", "- " + cookies.get(i).toString());
 
             HttpUriRequest login = RequestBuilder.post()
                     .setUri(new URI(REGISTER_URL))
@@ -88,20 +93,20 @@ public class Post extends Activity {
 
             HttpEntity entity1 = response2.getEntity();
 
-            System.out.println("Login form get: " + response2.getStatusLine());
-//            EntityUtils.consume(entity1);
-//            textView.setText(response2.getEntity().toString());
+            Log.e("post", "Login form get: " + response2.getStatusLine());
+            entity1.getContent();
 
-            System.out.println("Post logon cookies:");
+            Log.e("post", "Post logon cookies:");
             List<Cookie> cookies1 = cookieStore.getCookies();
             if (cookies1.isEmpty())
-                System.out.println("None");
+                Log.e("post", "None");
             else
                 for (int i = 0; i < cookies1.size(); i++)
-                    System.out.println("- " + cookies1.get(i).toString());
-        } catch (Exception e)
+                    Log.e("post", "- " + cookies1.get(i).toString());
+        }
+        catch (Exception e)
         {
-            e.printStackTrace();
+            Log.e("post", Log.getStackTraceString(e));
         }
     }
 }

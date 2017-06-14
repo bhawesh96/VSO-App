@@ -1,5 +1,6 @@
 package com.example.bhawesh96.vso_androidapp.LoginSignUp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,9 +9,11 @@ import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.bhawesh96.vso_androidapp.Post;
 import com.example.bhawesh96.vso_androidapp.R;
 
 public class FragmentLogin extends Fragment
@@ -26,6 +29,17 @@ public class FragmentLogin extends Fragment
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         View rootView = inflater.inflate(R.layout.fragment_login, container, false);
+        Button btn_login = (Button)rootView.findViewById(R.id.button_login);
+
+        btn_login.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(getActivity(), Post.class);
+                startActivity(intent);
+            }
+        });
 
         final AppCompatEditText edit_pass = (AppCompatEditText) rootView.findViewById(R.id.edit_pass);
         final ImageView shide = (ImageView) rootView.findViewById(R.id.icon_shide);
