@@ -22,12 +22,13 @@
     <string name="campus_mangalore">Mangalore</string>
     <string name="designation">Designation</string>
     <string name="next">NEXT</string>
-        <!-- Designation Spinner strings -->
-        <string name="des_student">Student of MU</string>
-        <string name="des_faculty">Faculty of MU</string>
-        <string name="des_empl">Employee at MU</string>
-        <string name="des_spouse_empl">Spouse of MU Employee</string>
-        <string name="des_retired_empl">Retired MU Employee</string>
-        <string name="des_public">Public</string>
-        <string name="des_hint">Select Designation</string>
+    <!-- Designation Spinner strings -->
+    <string name="des_student">Student of MU</string>
+    <string name="des_faculty">Faculty of MU</string>
+    <string name="des_empl">Employee at MU</string>
+    <string name="des_spouse_empl">Spouse of MU Employee</string>
+    <string name="des_retired_empl">Retired MU Employee</string>
+    <string name="des_public">Public</string>
+    <string name="des_hint">Select Designation</string>
+    <string name="title_activity_post_man">PostMan</string>
 </resources>

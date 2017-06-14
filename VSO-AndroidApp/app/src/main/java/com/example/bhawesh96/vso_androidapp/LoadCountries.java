@@ -36,25 +36,22 @@ public class LoadCountries extends ActionBarActivity {
 
     String usernameS;
     String datets;
-    String call="192.168.0.100", db="mydatabase", un="sa", passwords="123";
+    String call="vso.database.windows.net:1433", db="vso", un="bhawesh96@vso", passwords="Clandestine@1996";
     Connection connect;
     ResultSet rs;
     @SuppressLint("NewApi")
-    private Connection CONN(String _user, String _pass, String _DB,
-                            String _server) {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
-                .permitAll().build();
+    private Connection CONN(String user, String pass, String DB,
+                            String server) {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         Connection conn = null;
         String ConnURL = null;
         try {
             Class.forName("net.sourceforge.jtds.jdbc.Driver");
-//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//            ConnURL = "jdbc:jtds:sqlserver://" + _server + ";"
-//                    + "databaseName=" + _DB + ";user=" + _user + ";password="
-//                    + _pass + ";";
+            ConnURL = "jdbc:jtds:sqlserver://" + server + ";"
+                    + "databaseName=" + DB + ";user=" + user + ";password="
+                    + pass + ";";
 
-            ConnURL = "jdbc:jtds:sqlserver://vso.database.windows.net:1433;database=vso;user=bhawesh96@vso;password=Clandestine@1996;encrypt=true;trustServerCertificate=true;loginTimeout=15000;";
             conn = DriverManager.getConnection(ConnURL);
         } catch (SQLException se) {
             Log.e("ERRO1", se.getMessage());
@@ -74,7 +71,6 @@ public class LoadCountries extends ActionBarActivity {
         btnviewall = (Button) findViewById(R.id.btnviewall);
         btnview = (Button) findViewById(R.id.btnview);
         edtid = (EditText) findViewById(R.id.edtid);
-        /************* CONNECTION DATABASE VARIABLES ***************/
 
         connect = CONN(un, passwords, db, call);
         btnviewall.setOnClickListener(new View.OnClickListener() {
@@ -100,42 +96,15 @@ public class LoadCountries extends ActionBarActivity {
             }
         });
 
-//        btnview.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                try {
-//
-//                    PreparedStatement statement = connect.prepareStatement("EXEC viewCountry '"+edtid.getText().toString()+"'");
-//                    final ArrayList list = new ArrayList();
-//                    rs = statement.executeQuery();
-//                    while (rs.next()) {
-//                        list.add(rs.getString("CountryName"));
-//                    }
-//                    ArrayAdapter adapter = new ArrayAdapter(LoadCountries.this,
-//                            android.R.layout.simple_list_item_1, list);
-//
-//                    lstcountry.setAdapter(adapter);
-//                } catch (SQLException e) {
-//                    Toast.makeText(LoadCountries.this, e.getMessage().toString(),
-//                            Toast.LENGTH_LONG).show();
-//                }
-//            }
-//        });
-
         btnview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Connection con = connect;
-                Statement stmt = null;
                 try {
-                    final ArrayList list = new ArrayList();
-                    String query = "SELECT ID FROM countries";
-                    stmt = con.createStatement();
-                    Statement stmtx = con.createStatement();
-                    ResultSet rs = stmtx.executeQuery(query);
 
+                    PreparedStatement statement = connect.prepareStatement("EXEC viewCountry '"+edtid.getText().toString()+"'");
+                    final ArrayList list = new ArrayList();
+                    rs = statement.executeQuery();
                     while (rs.next()) {
                         list.add(rs.getString("CountryName"));
                     }
@@ -143,14 +112,41 @@ public class LoadCountries extends ActionBarActivity {
                             android.R.layout.simple_list_item_1, list);
 
                     lstcountry.setAdapter(adapter);
-
-
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    Toast.makeText(LoadCountries.this, e.getMessage().toString(),
+                            Toast.LENGTH_LONG).show();
                 }
-
             }
         });
+
+//        btnview.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Connection con = connect;
+//                Statement stmt = null;
+//                try {
+//                    final ArrayList list = new ArrayList();
+//                    String query = "SELECT ID FROM countries";
+//                    stmt = con.createStatement();
+//                    Statement stmtx = con.createStatement();
+//                    ResultSet rs = stmtx.executeQuery(query);
+//
+//                    while (rs.next()) {
+//                        list.add(rs.getString("CountryName"));
+//                    }
+//                    ArrayAdapter adapter = new ArrayAdapter(LoadCountries.this,
+//                            android.R.layout.simple_list_item_1, list);
+//
+//                    lstcountry.setAdapter(adapter);
+//
+//
+//                } catch (SQLException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
+//        });
 
 
         lstcountry.setOnItemClickListener(new OnItemClickListener() {
