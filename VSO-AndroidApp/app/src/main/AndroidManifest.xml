@@ -26,8 +26,6 @@
             android:name=".ActivityHomeScreen"
             android:label="@string/title_activity_home_screen"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Post"
-            android:label="POST"/>
     </application>
 
 </manifest>

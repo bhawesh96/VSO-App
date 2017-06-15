@@ -27,7 +27,8 @@
                 android:maxLines="1"
                 android:textColor="@android:color/white"
                 android:textColorHint="#e0e0e0"
-                app:backgroundTint="@color/colorAccent" />
+                app:backgroundTint="@color/colorAccent"
+                android:id="@+id/edit_uname"/>
         </android.support.design.widget.TextInputLayout>
 
         <ImageView

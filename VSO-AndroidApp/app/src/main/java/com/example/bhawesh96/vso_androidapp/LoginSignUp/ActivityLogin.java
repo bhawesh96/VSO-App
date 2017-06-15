@@ -3,31 +3,25 @@ package com.example.bhawesh96.vso_androidapp.LoginSignUp;
 import android.animation.Animator;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import com.example.bhawesh96.vso_androidapp.ActivityHomeScreen;
 import com.example.bhawesh96.vso_androidapp.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.example.bhawesh96.vso_androidapp.Utils.SessionManager;
 
 public class ActivityLogin extends AppCompatActivity
 {
+//    private FirebaseUser user;
+//    private FirebaseAuth mAuth;
 
-    private FirebaseUser user;
-    private FirebaseAuth mAuth;
+    SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -38,7 +32,9 @@ public class ActivityLogin extends AppCompatActivity
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        String email = "bhansalibhawesh@yahoo.com";
+        sessionManager = new SessionManager(this);
+
+        /*String email = "bhansalibhawesh@yahoo.com";
         String password = "Clandestine@1996";
 
         mAuth = FirebaseAuth.getInstance();
@@ -61,7 +57,7 @@ public class ActivityLogin extends AppCompatActivity
                             Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
 
         TypeWriter typeWriter = (TypeWriter) findViewById(R.id.tv_type);
         typeWriter.setCharacterDelay(80);
@@ -75,11 +71,18 @@ public class ActivityLogin extends AppCompatActivity
             @Override
             public void onAnimationEnd(Animator animation)
             {
-                if (user != null)
+                /*if (user != null)
+                {
+                    finish();
+                    startActivity(new Intent(ActivityLogin.this, ActivityHomeScreen.class));
+                }*/
+
+                if (sessionManager.isLoggedIn())
                 {
                     finish();
                     startActivity(new Intent(ActivityLogin.this, ActivityHomeScreen.class));
                 }
+
                 final FrameLayout ll = (FrameLayout) findViewById(R.id.container_login);
                 expand(ll);
                 ll.setVisibility(View.VISIBLE);
