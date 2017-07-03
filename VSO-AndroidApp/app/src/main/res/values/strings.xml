@@ -17,11 +17,27 @@
     <string name="last_name">Last Name</string>
     <string name="email">Email</string>
     <string name="mobile">Mobile number</string>
+
     <string name="campus">Campus</string>
     <string name="campus_manipal">Manipal</string>
     <string name="campus_mangalore">Mangalore</string>
+
     <string name="designation">Designation</string>
+
+    <string name="perm_address">Permanent Address</string>
+    <string name="pres_address">Present Address</string>
+    <string name="pres_same_as_perm">Permanent Address same as Present Address</string>
+
+    <string name="nationality">Nationality</string>
+
+    <string name="gender">Gender</string>
+    <string name="gender_male">M</string>
+    <string name="gender_female">F</string>
+    <string name="gender_other">Other</string>
+
+    <string name="blood_group">Bloog Group</string>
     <string name="next">NEXT</string>
+
     <!-- Designation Spinner strings -->
     <string name="des_student">Student of MU</string>
     <string name="des_faculty">Faculty of MU</string>
@@ -30,5 +46,17 @@
     <string name="des_retired_empl">Retired MU Employee</string>
     <string name="des_public">Public</string>
     <string name="des_hint">Select Designation</string>
-    <string name="title_activity_post_man">PostMan</string>
+
+    <!--BloodGroup Spinner strings -->
+    <string name="bg_Apos">A+</string>
+    <string name="bg_Aneg">A-</string>
+    <string name="bg_Bpos">B+</string>
+    <string name="bg_Bneg">B-</string>
+    <string name="bg_ABpos">AB+</string>
+    <string name="bg_ABneg">AB-</string>
+    <string name="bg_Opos">O+</string>
+    <string name="bg_Oneg">O-</string>
+    <string name="bg_unknown">Don\'t know</string>
+    <string name="bg_hint">BG</string>
+
 </resources>

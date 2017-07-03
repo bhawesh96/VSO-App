@@ -13,14 +13,12 @@ import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 
 import com.example.bhawesh96.vso_androidapp.ActivityHomeScreen;
+import com.example.bhawesh96.vso_androidapp.Person;
 import com.example.bhawesh96.vso_androidapp.R;
 import com.example.bhawesh96.vso_androidapp.Utils.SessionManager;
 
 public class ActivityLogin extends AppCompatActivity
 {
-//    private FirebaseUser user;
-//    private FirebaseAuth mAuth;
-
     SessionManager sessionManager;
 
     @Override
@@ -34,31 +32,6 @@ public class ActivityLogin extends AppCompatActivity
 
         sessionManager = new SessionManager(this);
 
-        /*String email = "bhansalibhawesh@yahoo.com";
-        String password = "Clandestine@1996";
-
-        mAuth = FirebaseAuth.getInstance();
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>()
-        {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task)
-            {
-                if (task.isSuccessful())
-                {
-                    // Sign in success, update UI with the signed-in user's information
-                    //Log.d(TAG, "signInWithEmail:success");
-                    user = mAuth.getCurrentUser();
-                }
-                else
-                {
-                    // If sign in fails, display a message to the user.
-                    Log.w("LOGIN-ACTIVITY", "signInWithEmail:failure", task.getException());
-                    Toast.makeText(ActivityLogin.this, "Authentication failed.",
-                            Toast.LENGTH_SHORT).show();
-                }
-            }
-        });*/
-
         TypeWriter typeWriter = (TypeWriter) findViewById(R.id.tv_type);
         typeWriter.setCharacterDelay(80);
         typeWriter.animateText("\"Let's touch the lives of others\"");
@@ -71,17 +44,11 @@ public class ActivityLogin extends AppCompatActivity
             @Override
             public void onAnimationEnd(Animator animation)
             {
-                /*if (user != null)
-                {
-                    finish();
-                    startActivity(new Intent(ActivityLogin.this, ActivityHomeScreen.class));
-                }*/
-
-                if (sessionManager.isLoggedIn())
-                {
-                    finish();
-                    startActivity(new Intent(ActivityLogin.this, ActivityHomeScreen.class));
-                }
+//                if (sessionManager.isLoggedIn())
+//                {
+//                    finish();
+//                    startActivity(new Intent(ActivityLogin.this, ActivityHomeScreen.class));
+//                }
 
                 final FrameLayout ll = (FrameLayout) findViewById(R.id.container_login);
                 expand(ll);

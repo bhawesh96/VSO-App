@@ -9,4 +9,17 @@
         <item>@string/des_public</item>
         <item>@string/des_hint</item>
     </string-array>
+
+    <string-array name="bloodGroup_options">
+        <item>@string/bg_Apos</item>
+        <item>@string/bg_Aneg</item>
+        <item>@string/bg_Bpos</item>
+        <item>@string/bg_Bneg</item>
+        <item>@string/bg_ABpos</item>
+        <item>@string/bg_ABneg</item>
+        <item>@string/bg_Opos</item>
+        <item>@string/bg_Oneg</item>
+        <item>@string/bg_unknown</item>
+        <item>@string/bg_hint</item>
+    </string-array>
 </resources>

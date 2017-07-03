@@ -21,7 +21,8 @@
             android:maxLines="1"
             android:textColor="@android:color/white"
             android:textColorHint="#e0e0e0"
-            app:backgroundTint="@color/colorAccent" />
+            app:backgroundTint="@color/colorAccent"
+            android:id="@+id/edit_fname" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -38,7 +39,8 @@
             android:maxLines="1"
             android:textColor="@android:color/white"
             android:textColorHint="#e0e0e0"
-            app:backgroundTint="@color/colorAccent" />
+            app:backgroundTint="@color/colorAccent"
+            android:id="@+id/edit_lname" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -55,7 +57,8 @@
             android:maxLines="1"
             android:textColor="@android:color/white"
             android:textColorHint="#e0e0e0"
-            app:backgroundTint="@color/colorAccent" />
+            app:backgroundTint="@color/colorAccent"
+            android:id="@+id/edit_email" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -72,7 +75,8 @@
             android:maxLines="1"
             android:textColor="@android:color/white"
             android:textColorHint="#e0e0e0"
-            app:backgroundTint="@color/colorAccent" />
+            app:backgroundTint="@color/colorAccent"
+            android:id="@+id/edit_contact" />
     </android.support.design.widget.TextInputLayout>
 
     <Button
